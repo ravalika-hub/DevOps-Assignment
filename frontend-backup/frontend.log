@@ -1,0 +1,12 @@
+nohup: ignoring input
+
+> frontend@0.1.0 dev
+> next dev --turbopack
+
+   ▲ Next.js 15.3.4 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://172.31.2.91:3000
+
+ ✓ Starting...
+ ✓ Ready in 1436ms
+ ⚠ Duplicate page detected. app/page.js and app/page.tsx resolve to /
