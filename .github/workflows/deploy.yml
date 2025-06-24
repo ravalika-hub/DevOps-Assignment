@@ -1,0 +1,33 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node and Python
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install backend dependencies and test
+        run: |
+          cd backend
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          pytest
+
+      - name: Install frontend dependencies and test
+        run: |
+          cd frontend
+          npm install
+          npx playwright install --with-deps
+          npx playwright test
