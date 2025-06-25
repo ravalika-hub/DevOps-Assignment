@@ -28,6 +28,7 @@ jobs:
 
 
       - name: Install backend dependencies and test
+        shell: bash
         run: |
           cd backend
           python3 -m venv venv
