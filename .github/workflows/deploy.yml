@@ -26,8 +26,8 @@ jobs:
         run: |
           cd backend
           python3 -m venv venv
-          ./venv/bin/pip install -r requriements.txt
-          ./venv/bin/pytest
+          backend/venv/bin/pip install -r backend/requriements.txt
+          backend/venv/bin/python3 -m pytest backend
 
       - name: Install frontend dependencies and test
         run: |
